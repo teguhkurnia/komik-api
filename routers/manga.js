@@ -190,6 +190,7 @@ router.get("/daftar-komik/page/:pagenumber", async (req, res) => {
         status: true,
         message: "success",
         total_page,
+        current_page: pagenumber,
         manga_list,
       });
     }
@@ -246,6 +247,7 @@ router.get("/cari/:query/:pagenumber?", async (req, res) => {
       return res.status(200).json({
         status: true,
         message: "success",
+        current_page: pagenumber,
         manga_list,
       });
     }
@@ -334,6 +336,7 @@ router.get("/genres/:slug/:pagenumber", async (req, res) => {
       return res.status(200).json({
         status: true,
         message: "success",
+        current_page: pagenumber,
         manga_list,
       });
     }
@@ -389,6 +392,7 @@ router.get("/type/:slug/:pagenumber", async (req, res) => {
       return res.status(200).json({
         status: true,
         message: "success",
+        current_page: pagenumber,
         manga_list,
       });
     }
