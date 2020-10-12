@@ -37,6 +37,7 @@ router.get("/daftar-komik/popular", async (req, res) => {
             endpoint,
             chapter,
             status,
+            current_page: "1",
           });
         }
       });
@@ -179,6 +180,7 @@ router.get("/daftar-komik/page/:pagenumber", async (req, res) => {
           endpoint,
           chapter,
           status,
+          current_page: pagenumber,
         });
       });
       total_page =
@@ -190,7 +192,6 @@ router.get("/daftar-komik/page/:pagenumber", async (req, res) => {
         status: true,
         message: "success",
         total_page,
-        current_page: pagenumber,
         manga_list,
       });
     }
@@ -211,7 +212,7 @@ router.get("/daftar-komik/page/:pagenumber", async (req, res) => {
 router.get("/cari/:query/:pagenumber?", async (req, res) => {
   const query = req.params.query;
   const pagenumber = req.params.pagenumber ? req.params.pagenumber : 1;
-  const url = `?s=${query}`;
+  const url = `page/${pagenumber}/?s=${query}`;
 
   try {
     const response = await AxiosService(url);
@@ -242,12 +243,12 @@ router.get("/cari/:query/:pagenumber?", async (req, res) => {
           endpoint,
           chapter,
           status,
+          current_page: pagenumber,
         });
       });
       return res.status(200).json({
         status: true,
         message: "success",
-        current_page: pagenumber,
         manga_list,
       });
     }
@@ -331,12 +332,12 @@ router.get("/genres/:slug/:pagenumber", async (req, res) => {
           endpoint,
           chapter,
           status,
+          current_page: pagenumber,
         });
       });
       return res.status(200).json({
         status: true,
         message: "success",
-        current_page: pagenumber,
         manga_list,
       });
     }
@@ -387,12 +388,12 @@ router.get("/type/:slug/:pagenumber", async (req, res) => {
           endpoint,
           chapter,
           status,
+          current_page: pagenumber,
         });
       });
       return res.status(200).json({
         status: true,
         message: "success",
-        current_page: pagenumber,
         manga_list,
       });
     }

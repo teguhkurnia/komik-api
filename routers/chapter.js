@@ -57,6 +57,18 @@ router.get("/:slug", async (req, res) => {
         });
       }
     });
+
+    obj.next_chapter = content.find(".nextprev > a[rel='next']").attr("href")
+      ? content
+          .find(".nextprev > a[rel='next']")
+          .attr("href")
+          .replace("https://komikcast.com/", "")
+      : "";
+    obj.prev_chapter = content
+      .find(".nextprev > a[rel='prev']")
+      .attr("href")
+      .replace("https://komikcast.com/", "");
+
     obj.chapter_image = chapter_image;
     obj.chapter_pages = chapter_image.length;
     res.json(obj);
