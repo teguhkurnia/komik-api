@@ -64,10 +64,12 @@ router.get("/:slug", async (req, res) => {
           .attr("href")
           .replace("https://komikcast.com/", "")
       : "";
-    obj.prev_chapter = content
-      .find(".nextprev > a[rel='prev']")
-      .attr("href")
-      .replace("https://komikcast.com/", "");
+    obj.prev_chapter = content.find(".nextprev > a[rel='prev']").attr("href")
+      ? content
+          .find(".nextprev > a[rel='prev']")
+          .attr("href")
+          .replace("https://komikcast.com/", "")
+      : "";
 
     obj.chapter_image = chapter_image;
     obj.chapter_pages = chapter_image.length;
