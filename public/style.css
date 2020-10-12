@@ -1,31 +1,173 @@
-html {
-    display: table;
-    margin: auto;
+* {
+  padding: 0;
+  margin: 0;
 }
-body{
-    height: 100%;
-    background-color: #E8505B;
-    margin: 0;
-    color: white;
+
+body {
+  background-color: black;
+  font-family: "Coluna";
+  color: white;
 }
-nav ul{
-    margin:0;
-    padding:0;
-    display:flex;
-    justify-content:space-between;
-    text-align: center;
+
+.container {
+  width: 90%;
+  margin: auto;
 }
-nav li{
-    list-style: none;
-    padding:1em 0;
+
+section {
+  min-height: 100vh;
 }
-nav li a{
-    color: white;
-    font-weight: bold;
-    opacity: 0.5;
-    text-decoration:none ;
-    transition:0.3s;
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-nav li a:hover{
-    opacity: 1;
+
+.box {
+  height: 90vh;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+.box::after {
+  content: "";
+  height: 50px;
+  border-left: 2px #283441 solid;
+  border-right: 2px #283441 solid;
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.hero svg {
+  width: 30px;
+  height: 30px;
+  fill: #f9b21b;
+}
+
+.plusBr {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.plusTr {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.plusBl {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.rectangle {
+  width: 300px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transform: rotate(140deg);
+
+  animation-name: rectangleRotate;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+
+  border: 2px #f9b21b solid;
+}
+
+@keyframes rectangleRotate {
+  0%,
+  10% {
+    transform: rotate(140deg);
+  }
+  50%,
+  60% {
+    transform: rotate(40deg);
+  }
+  100% {
+    transform: rotate(140deg);
+  }
+}
+
+.year {
+  letter-spacing: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: -5px;
+  color: white;
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 170px;
+  height: 200px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.name h1 {
+  font-size: 35px;
+}
+
+.name .first {
+  transform: translate(-200px, 0px);
+  animation: animateFirstName 4s infinite;
+}
+.name .second {
+  transform: translate(200px, 0px);
+  animation: animateSecondName 4s infinite;
+}
+
+@keyframes animateFirstName {
+  0%,
+  10% {
+    transform: translate(-200px, 0px);
+  }
+  50%,
+  60% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(-200px, 0px);
+  }
+}
+
+@keyframes animateSecondName {
+  0%,
+  10% {
+    transform: translate(200px, 0px);
+  }
+  50%,
+  60% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(200px, 0px);
+  }
 }

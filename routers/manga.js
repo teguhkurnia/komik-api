@@ -225,7 +225,6 @@ router.get("/cari/:query/:pagenumber?", async (req, res) => {
 
       element.find(".listupd .bs").each((idx, el) => {
         title = $(el).find(".bsx > .bigor > a > .tt").text().trim();
-        console.log(title);
         endpoint = $(el).find("a").attr("href").replace(replaceMangaPage, "");
         type = $(el).find(".bsx > a > .limit > .type").text();
         thumb = $(el).find(".bsx > a > .limit > img").attr("src");
@@ -313,7 +312,6 @@ router.get("/genres/:slug/:pagenumber", async (req, res) => {
 
       element.find(".listupd .bs").each((idx, el) => {
         title = $(el).find(".bsx > .bigor > a > .tt").text().trim();
-        console.log(title);
         endpoint = $(el).find("a").attr("href").replace(replaceMangaPage, "");
         type = $(el).find(".bsx > a > .limit > .type").text();
         thumb = $(el).find(".bsx > a > .limit > img").attr("src");
@@ -323,7 +321,6 @@ router.get("/genres/:slug/:pagenumber", async (req, res) => {
           .text()
           .replace(",", ".");
         status = $(el).find(".bsx > a > .limit > .status").text();
-        console.log(title);
         manga_list.push({
           title,
           thumb,
