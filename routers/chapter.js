@@ -70,7 +70,7 @@ router.get("/:slug", async (req, res) => {
           .attr("href")
           .replace("https://komikcast.com/", "")
       : "";
-
+    obj.threadId = content.find("meta").attr("content");
     obj.chapter_image = chapter_image;
     obj.chapter_pages = chapter_image.length;
     res.json(obj);

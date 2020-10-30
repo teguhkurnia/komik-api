@@ -3,6 +3,7 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 const manga = require("./routers/manga");
 const chapter = require("./routers/chapter");
+const comment = require("./routers/comment");
 const cors = require("cors");
 const helmet = require("helmet");
 
@@ -11,6 +12,7 @@ app.use(helmet());
 app.use("/api", manga);
 app.use(express.static("./public"));
 app.use("/api/chapter", chapter);
+app.use("/api/comment", comment);
 app.use("/api", (req, res) => {
   res.send({
     status: "Online",

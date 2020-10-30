@@ -69,3 +69,11 @@ example : https://komik-api-teguhkurnia.herokuapp.com/api/type/manhua/1
 ```
 
 example : https://komik-api-teguhkurnia.herokuapp.com/api/chapter/kanojo-okarishimasu-chapter-157-bahasa-indonesia/
+
+## comment
+
+```
+/comment/[threadId]
+```
+
+example : https://komik-api-teguhkurnia.herokuapp.com/api/comment/154511
