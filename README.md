@@ -54,7 +54,7 @@ example : https://komik-api-teguhkurnia.herokuapp.com/api//genres
 
 example : https://komik-api-teguhkurnia.herokuapp.com/api/genres/action/1
 
-## Type List (Chinese Comic)
+## Type List
 
 ```
 /type/[type]/[pageNumber]
